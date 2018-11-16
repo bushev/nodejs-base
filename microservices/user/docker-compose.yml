@@ -1,0 +1,18 @@
+version: '3.0'
+
+services:
+
+  userservice:
+    container_name: userservice
+    build:
+      context: .
+    image: userservice
+    env_file: docker-compose.env
+    environment:
+      SERVICES: user
+    networks:
+      - mbr-local
+
+networks:
+  mbr-local:
+    external: true
