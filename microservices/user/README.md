@@ -1,6 +1,6 @@
 [![Moleculer](https://img.shields.io/badge/Powered%20by-Moleculer-green.svg?colorB=0e83cd)](https://moleculer.services)
 
-# public-api-usage
+# User microservice
 
 ## Build Setup
 
