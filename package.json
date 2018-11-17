@@ -1,6 +1,6 @@
 {
-  "name": "nodejs-lib-2",
-  "version": "1.0.0",
+  "name": "nodejs-base",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "ci": "jest --watch",
