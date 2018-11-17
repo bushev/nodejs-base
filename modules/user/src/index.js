@@ -1,7 +1,5 @@
 'use strict';
 
-const mongoose = require('../../../models/base').mongoose;
-
 module.exports = {
 
     name: 'user',
@@ -20,7 +18,7 @@ module.exports = {
             },
             async handler(ctx) {
 
-                return (await this.model.insert(ctx.params)).toObject({getters: true});
+                return await ctx.call('db.insert', ctx.params);
             }
         }
     },
@@ -33,17 +31,11 @@ module.exports = {
 
     },
 
-    async started() {
+    started() {
 
-        await mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
-
-        this.model = require('../models/user');
-
-        this.logger.info(`MongoDB connected`);
     },
 
-    async stopped() {
+    stopped() {
 
-        await mongoose.connection.close();
     }
 };

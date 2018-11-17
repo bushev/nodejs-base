@@ -2,21 +2,32 @@
   "name": "nodejs-lib-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint modules/**/src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bushev/nodejs-lib-2.git"
+  "devDependencies": {
+    "should": "13.2.3",
+    "eslint": "5.0.1",
+    "jest": "23.3.0",
+    "jest-cli": "23.3.0",
+    "moleculer-repl": "0.5.0"
   },
-  "author": "Yury Bushev",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bushev/nodejs-lib-2/issues"
-  },
-  "homepage": "https://github.com/bushev/nodejs-lib-2#readme",
   "dependencies": {
-    "mongoose": "5.3.12"
+    "moleculer": "0.13.0",
+    "mongoose": "5.3.12",
+    "nats": "1.0.0"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./modules",
+    "roots": [
+      "../modules"
+    ]
   }
 }

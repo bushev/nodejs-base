@@ -1,5 +1,5 @@
 module.exports = {
-    "root": true,
+    root: true,
     "env": {
         "node": true,
         "commonjs": true,
@@ -10,17 +10,17 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 2017
     },
     "rules": {
         "indent": [
             "warn",
-            "tab",
-            {"SwitchCase": 1}
+            4
         ],
         "quotes": [
             "warn",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
@@ -33,9 +33,6 @@ module.exports = {
             "off"
         ],
         "no-unused-vars": [
-            "warn"
-        ],
-        "no-mixed-spaces-and-tabs": [
             "warn"
         ]
     }
